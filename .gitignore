@@ -9,5 +9,6 @@ venv/
 *.tmp
 build_temp/
 *.spec
+release/
 *.egg-info/
 dist/
