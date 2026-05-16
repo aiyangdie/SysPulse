@@ -7,3 +7,7 @@ __pycache__/
 venv/
 .env
 *.tmp
+build_temp/
+*.spec
+*.egg-info/
+dist/

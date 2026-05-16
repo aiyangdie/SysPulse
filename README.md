@@ -3,6 +3,7 @@
   <img src="https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge&logo=python" alt="Python">
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Stars-请Star支持-red?style=for-the-badge&logo=github" alt="Stars">
+  <a href="https://github.com/aiyangdie/SysPulse/releases/latest"><img src="https://img.shields.io/badge/⬇️_下载EXE-v1.0.0-brightgreen?style=for-the-badge" alt="Download"></a>
 </p>
 
 <h1 align="center">⚡ SysPulse - 硬件性能实时监控与诊断系统</h1>
@@ -14,6 +15,8 @@
 <p align="center">
   <img src="https://img.shields.io/github/stars/aiyangdie/SysPulse?style=social" alt="GitHub stars">
   <img src="https://img.shields.io/github/forks/aiyangdie/SysPulse?style=social" alt="GitHub forks">
+  <img src="https://img.shields.io/github/downloads/aiyangdie/SysPulse/total?style=social" alt="Downloads">
+  <img src="https://img.shields.io/github/v/release/aiyangdie/SysPulse?style=social" alt="Release">
   <img src="https://img.shields.io/github/languages/top/aiyangdie/SysPulse" alt="Language">
   <img src="https://img.shields.io/github/repo-size/aiyangdie/SysPulse" alt="Repo size">
 </p>
@@ -435,13 +438,26 @@ def calculate_health_score(single, multi, mem, disk):
 
 ## 🚀 快速开始
 
-### 环境要求
+### 方式一：下载 EXE（推荐，无需安装任何东西）
 
-- **操作系统**: Windows 10/11（Linux/macOS 部分功能可用）
-- **Python**: ≥ 3.8
-- **GPU**: 可选（NVIDIA GPU 需安装驱动以获取实时数据）
+> 🎯 **最简单的方式**：下载 → 双击 → 搞定！
 
-### 安装步骤
+1. 👉 **[点击下载 SysPulse.exe](https://github.com/aiyangdie/SysPulse/releases/latest)**
+2. 在页面中找到 `SysPulse.exe`，点击下载
+3. 双击运行即可！
+
+```
+下载 EXE → 双击运行 → 看到菜单 → 选功能 → 开始监控！✔️
+```
+
+| 优点 | 说明 |
+|------|------|
+| 🚀 零依赖 | 不需要安装 Python、不需要 pip、不需要配置环境 |
+| 📦 单文件 | 一个 34MB 的 EXE，放 U 盘里随身携带 |
+| 💻 即开即用 | 双击就能跑，任何 Windows 电脑都能用 |
+| 🔒 安全 | 无网络请求，纯本地运行，不收集任何数据 |
+
+### 方式二：从源码运行（开发者）
 
 ```bash
 # 1. 克隆仓库
@@ -455,7 +471,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### 一键启动
+### 方式三：一键启动（已克隆仓库）
 
 Windows 用户直接双击 `运行.bat` 即可启动！
 
@@ -472,9 +488,12 @@ SysPulse/
 ├── diagnostic.py       # 🏆 性能诊断 & 跑分引擎
 ├── requirements.txt    # 📦 Python依赖
 ├── .gitignore          # 🔒 Git忽略规则
+├── LICENSE             # 📄 MIT 开源协议
 ├── 运行.bat            # ⚡ Windows一键启动脚本
 ├── screenshots/        # 📸 项目截图
 │   └── 01-terminal.png
+├── release/            # 🎁 打包输出目录
+│   └── SysPulse.exe    # ← 这就是分发给用户的 EXE！
 └── README.md           # 📖 本文件
 ```
 
@@ -593,6 +612,24 @@ menu_actions = {
 - [ ] 硬件信息导出为 PDF 报告
 - [ ] 多语言支持（English/日本語）
 - [ ] GitHub Actions CI/CD
+
+---
+
+## 🔨 开发者：自行打包 EXE
+
+如果你想自行构建 EXE 文件：
+
+```bash
+# 1. 安装 PyInstaller
+pip install pyinstaller
+
+# 2. 执行打包（一键命令）
+python -m PyInstaller --onefile --name "SysPulse" --clean --distpath "./release" main.py
+
+# 3. 构建产物在 release/SysPulse.exe（约 34MB）
+```
+
+> ℹ️ 使用 `--onefile` 将所有依赖打包成单个 EXE，用户无需安装任何环境。
 
 ---
 
