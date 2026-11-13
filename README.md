@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/covers/43-SysPulse.jpg" alt="SysPulse 项目封面" width="100%"></p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Platform">
   <img src="https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge&logo=python" alt="Python">
